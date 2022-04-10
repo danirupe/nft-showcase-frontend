@@ -1,0 +1,400 @@
+/*==================== REUSABLE ====================*/
+.button {
+  cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.8rem;
+
+  color: #fff;
+  background: rgb(100, 70, 230);
+  background: linear-gradient(
+    90deg,
+    rgba(100, 70, 230, 1) 40%,
+    rgba(94, 217, 254, 1) 100%
+  );
+}
+.button--warning {
+  background: rgb(153, 1, 1);
+  background: linear-gradient(
+    90deg,
+    rgba(153, 1, 1, 1) 40%,
+    rgba(254, 94, 94, 1) 100%
+  );
+}
+.button--bor {
+  margin-left: 0.8rem;
+  position: relative;
+  background: transparent;
+  color: var(--text-color);
+}
+.button--bor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.8rem;
+  border: 2px solid transparent;
+  background: linear-gradient(
+      45deg,
+      rgba(100, 70, 230, 1),
+      rgba(94, 217, 254, 1)
+    )
+    border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.degraded {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(100, 70, 230, 1),
+    rgba(94, 217, 254, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgba(100, 70, 230, 1);
+}
+.title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--mb-2);
+}
+/*==================== LAYOUT ====================*/
+.section {
+  padding: 3rem 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.main {
+  padding-top: 7rem;
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.flex {
+  display: flex;
+}
+
+/*==================== HEADER ====================*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  z-index: 1;
+}
+.header--scroll {
+  background-color: var(--container-color);
+  box-shadow: 0 -1px 4px rgb(0 0 0 / 15%);
+  z-index: 2;
+}
+.nav {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  height: 5.5rem;
+}
+.nav__logo {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: var(--font-medium);
+}
+.nav__logo svg {
+  margin-right: var(--mr-0-5);
+}
+.nav__logo span:not(.degraded) {
+  font-weight: var(--font-extra-light);
+  font-size: 1.2rem;
+}
+.nav__list {
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.nav__item--admin {
+  text-decoration: underline;
+}
+
+/*==================== WELCOME ====================*/
+.welcome__wrapper {
+  align-items: center;
+
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding-top: 5rem;
+}
+.welcome__blob-img {
+  width: 500px;
+}
+.welcome__title {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1-5);
+  line-height: 3.5rem;
+}
+.welcome__description {
+  font-size: var(--h3-font-size);
+}
+.welcome__buttons {
+  margin-top: var(--mt-2);
+}
+
+/*==================== TODAYS LAUNCHES ====================*/
+.launches__container {
+  padding-top: 6rem;
+}
+.launches__wrapper {
+  grid-template-columns: repeat(3, 1fr);
+}
+.launches__button {
+  width: max-content;
+  margin: var(--mt-3) auto 0 auto;
+}
+
+/*==================== NEXT LAUNCHES ====================*/
+.nextLaunches__container {
+  padding-top: 6rem;
+}
+.nextLaunches__wrapper {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*==================== TODAYS NFTGAME COMPONENT ====================*/
+.nftgame {
+  background-color: var(--container-color);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  box-shadow: 0 1px 2px 0px rgb(0 0 0 / 15%);
+}
+.nftgame__img {
+  border-radius: 0.8rem;
+  margin-bottom: var(--mb-1);
+}
+.nftgame__content {
+  margin-bottom: var(--mb-1);
+}
+.nftgame__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+  margin-top: var(--mt-0-5);
+  color: var(--text-color);
+}
+.nftgame__description {
+  font-weight: var(--font-medium);
+}
+.nftgame__time {
+  font-size: var(--small-font-size);
+  align-items: center;
+  width: max-content;
+}
+.nftgame__time svg {
+  width: auto;
+  margin-right: 0.2rem;
+}
+.nftgame__button {
+  justify-content: flex-end;
+}
+
+/*==================== NEXT NFTGAME COMPONENT ====================*/
+.nextNftGame {
+  background-color: var(--container-color);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  box-shadow: 0 1px 2px 0px rgb(0 0 0 / 15%);
+
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.nextNftGame__img img {
+  border-radius: 0.8rem;
+}
+.timer__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+}
+.timer__wrapper p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer__number {
+  font-size: var(--h2-font-size);
+}
+.timer__text {
+  font-size: var(--small-font-size);
+}
+.nextNftGame__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+  color: var(--text-color);
+}
+.nextNftGame__button {
+  margin-top: var(--mt-1);
+}
+.nextNftGame__description {
+  font-weight: var(--font-medium);
+}
+
+/*==================== TODAY GAME ====================*/
+.hero {
+  margin: 4rem 0;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+
+  display: flex;
+  align-items: center;
+}
+.hero__container {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+.hero__content {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero__title {
+  text-align: var(--text-center);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-2-5);
+}
+.hero__description {
+  text-align: var(--text-center);
+  margin-bottom: var(--mb-2);
+}
+.hero__button {
+  margin-top: var(--mt-2);
+  text-align: var(--text-center);
+}
+.hero .timer {
+  width: 60%;
+  align-self: center;
+  background: var(--body-color);
+  padding: 1.3rem;
+  border-radius: 0.8rem;
+}
+.hero .timer__wrapper {
+  margin-bottom: 0;
+}
+
+/*==================== ALL GAMES ====================*/
+.games__content {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--mb-2);
+}
+.games__button {
+  width: max-content;
+  margin: 0 auto;
+}
+
+/*==================== SEARCH BAR ====================*/
+.searchBar {
+  margin-bottom: var(--mb-2);
+}
+.searchBar__content {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--mb-2);
+}
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--text-color);
+  border-radius: 0.8rem;
+  padding: 0.3125rem;
+}
+.search__input {
+  width: 100%;
+}
+.search__icon {
+  width: auto;
+  cursor: pointer;
+  margin-right: 5px;
+}
+/*==================== FOOTER ====================*/
+.footer {
+  margin-top: var(--mt-3);
+  background: var(--container-color);
+  box-shadow: 0 0px 2px 0px rgb(0 0 0 / 15%);
+}
+.footer__content {
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 3rem 0;
+}
+.footer__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+}
+.footer__logo {
+  width: max-content;
+  margin-bottom: var(--mb-0-5);
+}
+.footer__copy {
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--text-color);
+}
+
+/*==================== LOGIN ====================*/
+.login__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.login__box {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 0.8rem;
+}
+.button--login {
+  width: max-content;
+  margin: var(--mt-1) 0 0 0;
+}
+.button--icon {
+  display: flex;
+  align-items: center;
+}
+.button__icon {
+  margin-right: var(--mr-0-5);
+}
+.form__input--login {
+  margin-bottom: var(--mb-1-5);
+}
+.login__title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--mb-2);
+}
+.errors__list {
+  margin-bottom: var(--mb-1-5);
+  padding: 0.5rem;
+  background-color: #ff9380;
+  border: 1px solid #de5942;
+  border-radius: 0.8rem;
+  font-size: var(--small-font-size);
+}

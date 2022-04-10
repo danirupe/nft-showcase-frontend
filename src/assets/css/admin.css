@@ -1,0 +1,251 @@
+/*==================== REUSABLE ====================*/
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid rgb(100, 70, 230); /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container__loader {
+  height: calc(100vh - 415px);
+}
+.disabled {
+  opacity: 0.5;
+}
+.form__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.form__content--three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.form__box {
+  background: var(--container-color);
+  border-radius: 0.8rem;
+  margin-bottom: var(--mb-1);
+  padding: 1rem;
+}
+.form__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.form__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form__svg {
+  margin-right: var(--mr-0-5);
+  width: auto;
+}
+.form__label {
+  margin-bottom: var(--mb-0-5);
+  font-size: var(--small-font-size);
+}
+.form__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #00000014;
+  outline: none;
+}
+.form__input--file {
+  width: 100%;
+  border: 1px dashed;
+  border-radius: 0.8rem;
+  padding: 1.25rem;
+}
+.form__button {
+  margin-top: var(--mt-1);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.switch__slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.switch input:checked + .switch__slider {
+  background: linear-gradient(
+    45deg,
+    rgba(100, 70, 230, 1),
+    rgba(94, 217, 254, 1)
+  );
+}
+.switch input:checked + .switch__slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.switch__slider--round {
+  border-radius: 0.8rem;
+}
+.switch__slider--round:before {
+  border-radius: 50%;
+}
+
+/*==================== DASHBOARD MENU ====================*/
+.dashboard__menu {
+  margin-bottom: var(--mb-2-5);
+}
+.dashboard__list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.dashboard__item {
+  background-color: var(--container-color);
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.5rem;
+}
+
+/*==================== ADMIN / ====================*/
+.account__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-2);
+  text-align: center;
+}
+.account__subtitle {
+  text-align: center;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-2);
+}
+
+/*==================== NEW GAME nftgames/new ====================*/
+.formGames__title {
+  text-align: center;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-2);
+}
+.formGames__subtitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  margin-top: var(--mt-1);
+  font-weight: var(--font-medium);
+}
+.formGames__form {
+  width: 90%;
+  margin: 0 auto;
+}
+.tox-tinymce {
+  border-radius: 0.8rem !important;
+}
+
+/*==================== GAMES /nftgames ====================*/
+.game {
+  background-color: var(--container-color);
+  box-shadow: 0 1px 2px 0px rgb(0 0 0 / 15%);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-bottom: var(--mb-1);
+}
+.game__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 0.5fr;
+  gap: 2rem;
+  align-items: center;
+}
+.game__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-5);
+}
+.game__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/*==================== GAME /nftgames/id ====================*/
+.viewNftGame__wrapper {
+  padding: 2rem;
+  background-color: var(--container-color);
+  border-radius: 0.8rem;
+  box-shadow: 0 1px 2px 0px rgb(0 0 0 / 15%);
+  margin-bottom: var(--mb-1);
+}
+.viewNftGame__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-2);
+}
+.viewNftGame__description {
+  margin-bottom: var(--mb-1-5);
+}
+.viewNftGame__info {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.viewNftGame__item {
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-5);
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  gap: 0.3rem;
+  align-items: center;
+}
+.viewNftGame__value {
+  font-weight: normal;
+}
+.viewNftGame__value--a {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.viewNftGame__svg {
+  width: auto;
+}
+.viewNftGame__content {
+  margin-top: var(--mt-1-5);
+  border-top: 1px solid var(--text-color);
+  padding-top: 1.5rem;
+}
+.viewNftGame__buttons {
+  display: flex;
+  gap: 1rem;
+}
